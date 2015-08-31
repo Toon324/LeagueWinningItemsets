@@ -1,0 +1,26 @@
+﻿@using LeagueStatisticallyBestItemset.Models
+@using LeagueStatisticallyBestItemset.Services
+@model LeagueStatisticallyBestItemset.Models.Champion
+
+<div>
+    <div class="portrait">
+        <img src="@Model.Image.GetImageUrl("na", ImageData.ImageTypes.Loading)" />
+    </div>
+    <div class="infoContainer">
+        <div class="info">
+            <h1>@Model.Name</h1>
+            <h3>@Model.Title</h3>
+        </div>
+        <div class="roleImgs">
+            @foreach (var role in ApiTools.GetRoles())
+            {
+                var img = role + ".jpg";
+                <a href="/stats?champId=@Model.Id&role=@role">
+                    <img class="laneImg" src="/Content/@img" />
+                </a>
+            }
+        </div>
+    </div>
+
+
+</div>

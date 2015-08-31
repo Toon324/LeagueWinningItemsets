@@ -1,0 +1,63 @@
+﻿@using LeagueStatisticallyBestItemset.Models
+@using LeagueStatisticallyBestItemset.Services
+@model ItemSet
+
+@{
+    try
+    {
+        <div class="champStat">
+            <h1>@Model.Champion.ToString()</h1>
+            <h2>@Model.Lane</h2>
+        </div>
+
+        <a href="/Stats/Itemset?champId=@Model.Champion.Id&role=@Model.Lane"><button class="btn btn-lg btn-primary">Download Itemset (.json)</button></a>
+        <h5 id="faq">
+            File goes in this location: [League of Legends install Folder]/Config/Champions/@Model.Champion.Key/Recommended/[file.json]
+        </h5>
+
+        <div id="itemBuild">
+            <div class="section">
+                <h2>Early</h2>
+                @foreach (var itemStat in Model.EarlyItems)
+                {
+                    Html.RenderPartial("ItemStat", itemStat);
+                }
+            </div>
+            <div class="section">
+                <h2>Mid</h2>
+                @foreach (var itemStat in Model.MidgameItems)
+                {
+                    Html.RenderPartial("ItemStat", itemStat);
+                }
+            </div>
+            <div class="section">
+                <h2>Late</h2>
+                @foreach (var itemStat in Model.LategameItems)
+                {
+                    Html.RenderPartial("ItemStat", itemStat);
+                }
+            </div>
+
+            <div style="display: none">
+                @Model.GenerateJson()
+            </div>
+        </div>
+    }
+    catch (Exception e)
+    {
+        <div>
+            @e.Message
+            @e.StackTrace
+        </div>
+    }
+}
+
+<script>
+    $(document).ready(function () {
+        $("body").css("background", "url('@Model.Champion.Image.GetImageUrl("na",ImageData.ImageTypes.Splash)') no-repeat center center fixed");
+        $("body").css("background-size", "cover");
+        $("body").css("webkit-background-size", "cover");
+        $("body").css("moz-background-size", "cover");
+        $("body").css("o-background-size", "cover");
+    });
+</script>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="AzureWebJobsStorage-Web.config Connection String" description="AzureWebJobsStorage Connection String used in web.config by the application to access the database." defaultValue="DefaultEndpointsProtocol=https;AccountName=lsbi;AccountKey=6Zzz0wN210VtWV5fVkQzc6igxgcO6D4kKjb4lIB8RxjILHxYB2guYyupQNqkt/oODmYDZR537WJTrRIY7p+RFA==" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Cody\\documents\\visual\ studio\ 2013\\Projects\\LeagueStatisticallyBestItemset\\LeagueStatisticallyBestItemset\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AzureWebJobsStorage']/@connectionString" />
+  </parameter>
+  <parameter name="AzureWebJobsDashboard-Web.config Connection String" description="AzureWebJobsDashboard Connection String used in web.config by the application to access the database." defaultValue="DefaultEndpointsProtocol=https;AccountName=lsbi;AccountKey=6Zzz0wN210VtWV5fVkQzc6igxgcO6D4kKjb4lIB8RxjILHxYB2guYyupQNqkt/oODmYDZR537WJTrRIY7p+RFA==" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Cody\\documents\\visual\ studio\ 2013\\Projects\\LeagueStatisticallyBestItemset\\LeagueStatisticallyBestItemset\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AzureWebJobsDashboard']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-LeagueStatisticallyBestItemset-20150822073033.mdf;Initial Catalog=aspnet-LeagueStatisticallyBestItemset-20150822073033;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Cody\\documents\\visual\ studio\ 2013\\Projects\\LeagueStatisticallyBestItemset\\LeagueStatisticallyBestItemset\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>
