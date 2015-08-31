@@ -1,0 +1,22 @@
+﻿@using LeagueStatisticallyBestItemset.Models
+@using LeagueStatisticallyBestItemset.Services
+@model ItemStats
+
+@{
+    var item = StaticDataService.GetItem("na", Model.ItemId);
+}
+
+<div class="stat" style="background-color: @Model.GetBackgroundColor()">
+    <img src="@item.Image.GetImageUrl("na", ImageData.ImageTypes.Item)" />
+    <br />
+    <h4>@item.Name</h4>
+    <div class="itemStats">
+        Uses: @Model.Uses <br/>
+        Wins: @Model.Wins <br/>
+        <br/>
+        Win Percent: <br/>
+        @Model.GetWinPercent() <br/>
+        Average Time Bought: <br/>
+        @Model.GetAverageTimeBought()
+    </div>
+</div>

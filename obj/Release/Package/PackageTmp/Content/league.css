@@ -1,0 +1,122 @@
+﻿.purchase {
+    margin-left: 40px;
+    padding: 10px;
+    border: 1px gray dotted;
+    width: 300px;
+    height: 175px;
+    display: inline-table;
+}
+
+.player {
+    padding: 25px;
+    border: 1px black solid;
+}
+
+.squareImage {
+    width: 90%;
+    height: 90%;
+}
+
+.first {
+    background-color: gainsboro;
+}
+
+.stat {
+    background: gainsboro;
+    border: 1px gray solid;
+    padding: 25px;
+    width: 180px;
+    height: 300px;
+    display: table-cell;
+}
+
+.section {
+    padding: 15px;
+}
+
+.champ {
+    width: 130px;
+    height: 130px;
+    display: inline-block;
+    border: 1px gray solid;
+    padding: 10px;
+    background-color: gainsboro;
+}
+
+#champSelect {
+    padding: 20px;
+}
+
+#searchBox {
+    max-width: 85% !important;
+    width: 85%;
+    padding: 5px;
+    outline: none;
+    border: 3px solid #999999;
+    border-radius: 6px;
+    background-color: #FBFBFB;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    margin-left: 50px;
+    margin-right: auto;
+}
+
+#faq {
+    background-color: #fbfbfb;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.laneImg {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+}
+
+.roleImgs {
+    padding-top: 100px;
+}
+
+body {
+    background: url('rift.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.infoContainer {
+    width: 69%;
+    display: inline-block;
+}
+
+.info {
+    color: gainsboro;
+    font-size: x-large;
+}
+
+.portrait {
+    width: 30%;
+    display: inline-block;
+}
+
+.champStat h1, h2 {
+    color: white;
+    text-shadow: 0 0 25px black;
+}
+
+.section h1, h2 {
+    color: white;
+}
+
+h4 {
+    height: 30px;
+}
+
+.itemStats {
+    padding-top: 25px;
+}
+
+.champStat {
+    padding-bottom: 10px;
+}

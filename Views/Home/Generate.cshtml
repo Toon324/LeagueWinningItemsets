@@ -1,0 +1,29 @@
+﻿@using System.Activities.Statements
+@using LeagueStatisticallyBestItemset.Services
+@model System.Collections.Generic.List<LeagueStatisticallyBestItemset.Models.ItemStats>
+<link href="~/Content/league.css" rel="stylesheet" />
+
+<div>
+    @{
+        var lastChamp = -1;
+        var color = "white";
+        foreach (var itemStat in Model.OrderBy(x => x.ChampionId).ThenBy(x => x.WeightedWinPercent))
+        {
+            if (lastChamp == -1 || lastChamp != itemStat.ChampionId)
+            {
+                lastChamp = itemStat.ChampionId;
+                color = color == "white" ? "gainsboro" : "white";
+            }
+            <div class="stat" style="background-color: @color">
+                @StaticDataService.GetChampion("na", itemStat.ChampionId).ToString()
+                <br/>
+                @itemStat.Lane
+                <br/>
+                <br/>
+                @StaticDataService.GetItem("na", itemStat.ItemId).Name
+                @Html.Raw(itemStat.ToString())
+            </div>
+        }
+    }
+       
+</div>

@@ -1,0 +1,58 @@
+﻿@using LeagueStatisticallyBestItemset.Models
+
+@model List<Champion>
+
+<div id="faq">
+    <p>Have you ever read a quide for a Champion and thought to yourself "but how do I really know this is the best build? When was the last time this was updated?"</p>
+
+    <p>Worry no more! LoL Winning Itemsets (LWI) tracks the winrate of every item that is bought on a Champion in every lane, then breaks that down into a build you can download and use in-game.</p>
+
+    <p>Now go out there, and win with the power of math!</p>
+</div>
+<br/>
+<input id="searchBox" type="text" placeholder="Find a Champion..." />
+
+<div id="champSelect">
+    @foreach (var champ in Model.OrderBy(x => x.Name))
+    {
+        <div class="champ" data-name="@champ.Name.ToLower()">
+            <a href="/Role?id=@champ.Id">
+                <img class="squareImage" src="@champ.Image.GetImageUrl("na", ImageData.ImageTypes.Square)" />
+                <div>@champ.Name</div>
+            </a>
+        </div>
+    }
+</div>
+
+
+<script>
+    $("#searchBox").keyup(function () {
+        var all = $(".champ");
+        var text = $(this).val().toLowerCase();
+
+        // If no search term, show all
+        if (text === '') {
+            all.show();
+            return;
+        }
+        // Easter egg search terms
+        else if (text === "cancer") {
+            text = "fiora";
+        }
+        else if (text === "pirate") {
+            text = "gangplank";
+        }
+        else if (text === "dong") {
+            text = "ding";
+        }
+        else if (text === "moustache") {
+            text = "braum";
+        }
+
+        // Match on any elements that have a data-name that contains the search term
+        var matching = $('.champ[data-name*="' + text + '"');
+
+        all.hide();
+        matching.show();
+    });
+</script>
